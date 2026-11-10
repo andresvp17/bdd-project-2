@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ruta del Expediente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Overpass+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    width: 1440px; height: 900px; overflow: hidden;
+    background: #20242A; color: #1A1A1A;
+    font-family: 'Overpass', system-ui, sans-serif;
+  }
+  .shell { width: 1440px; height: 900px; display: flex; flex-direction: column; }
+  .top {
+    height: 58px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
+    color: #F5F2E9; border-bottom: 1px solid #353B42;
+  }
+  .brand { display: flex; align-items: baseline; gap: 14px; }
+  .brand strong { font-size: 20px; font-weight: 800; letter-spacing: .02em; }
+  .brand span { font-size: 11px; letter-spacing: .2em; color: #F2C200; font-weight: 700; }
+  .meta { font-size: 11px; letter-spacing: .16em; color: #AEB6BF; display: flex; gap: 22px; }
+  .search-wrap { padding: 22px 32px 0; }
+  .gantry { display: flex; height: 74px; background: #F5F2E9; border: 1px solid #C9C4B8; box-shadow: 0 4px 0 #121519; }
+  .gantry .tab {
+    width: 152px; background: #F2C200; color: #16181B; display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900; letter-spacing: .16em;
+  }
+  .gantry input {
+    flex: 1; border: 0; background: transparent; padding: 0 22px;
+    font-family: 'Overpass Mono', monospace; font-size: 21px; color: #20242A; outline: 0;
+  }
+  .gantry input::placeholder { color: #8B9097; }
+  .gantry .go {
+    width: 152px; border: 0; background: #20242A; color: #F5F2E9; font: 800 13px 'Overpass', sans-serif;
+    letter-spacing: .18em; cursor: pointer;
+  }
+  .hints { display: flex; gap: 10px; margin-top: 10px; }
+  .hints span {
+    font: 600 11px/1 'Overpass Mono', monospace; color: #AEB6BF; border: 1px solid #454C54;
+    padding: 7px 10px; letter-spacing: .04em;
+  }
+  .route {
+    margin: 18px 32px 0; background: #F5F2E9; border: 1px solid #C9C4B8;
+    display: flex; align-items: stretch; height: 96px; position: relative;
+  }
+  .route:before {
+    content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 2px dashed #B9B3A6; z-index: 0;
+  }
+  .stop {
+    position: relative; z-index: 1; flex: 1; background: #F5F2E9; margin: 10px 0 10px 10px;
+    border: 1px solid #CFC9BC; padding: 10px 16px 8px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .stop:last-of-type { margin-right: 10px; }
+  .stop .bar { height: 5px; position: absolute; top: 0; left: 0; right: 0; }
+  .bar.y { background: #F2C200; } .bar.b { background: #1C5AA3; } .bar.g { background: #1F7A4D; } .bar.r { background: #C1272D; }
+  .stop small { font: 700 10px 'Overpass', sans-serif; letter-spacing: .16em; color: #6F757C; }
+  .stop strong { font: 800 19px 'Overpass', sans-serif; margin-top: 3px; }
+  .stop.plate strong { font: 900 38px/1 'Overpass Mono', monospace; letter-spacing: .02em; }
+  .status {
+    width: 192px; background: #1F7A4D; color: #FFF; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 6px; margin: 10px 10px 10px 0;
+  }
+  .status strong { font-size: 18px; font-weight: 900; letter-spacing: .12em; }
+  .status small { font-size: 9px; letter-spacing: .18em; color: #CFE8D9; }
+  .main { flex: 1; display: grid; grid-template-columns: 1fr 372px; gap: 18px; padding: 18px 32px 22px; min-height: 0; }
+  .panel { background: #F5F2E9; border: 1px solid #C9C4B8; display: flex; flex-direction: column; }
+  .sec-head { display: flex; align-items: center; gap: 0; border-bottom: 1px solid #D6D0C3; }
+  .sec-head .tab { background: #1C5AA3; color: #FFF; font: 800 10px 'Overpass'; letter-spacing: .18em; padding: 9px 14px; }
+  .sec-head .tab.red { background: #C1272D; }
+  .sec-head h2 { font-size: 13px; font-weight: 800; letter-spacing: .06em; margin: 0 14px; flex: 1; }
+  .sec-head .count { font: 600 11px 'Overpass Mono'; color: #6F757C; margin-right: 14px; }
+  .fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 22px; padding: 18px 20px; }
+  .field small { display: block; font: 700 9px 'Overpass'; letter-spacing: .16em; color: #7A8087; margin-bottom: 4px; }
+  .field span { font: 600 15px 'Overpass'; }
+  .field .mono { font-family: 'Overpass Mono', monospace; font-size: 14px; letter-spacing: .02em; }
+  .owner { padding: 18px 20px; border-left: 6px solid #1F7A4D; }
+  .owner small { font: 800 9px 'Overpass'; letter-spacing: .18em; color: #1F7A4D; }
+  .owner h3 { font-size: 25px; line-height: 1.05; margin: 8px 0 4px; font-weight: 900; }
+  .owner .ced { font: 600 13px 'Overpass Mono'; color: #4E555C; }
+  .owner dl { display: grid; grid-template-columns: 76px 1fr; gap: 8px 10px; margin: 16px 0 0; font-size: 12px; }
+  .owner dt { font-weight: 700; color: #7A8087; letter-spacing: .06em; }
+  .owner dd { margin: 0; }
+  .timeline { padding: 16px 20px; }
+  .tl-row { display: grid; grid-template-columns: 18px 1fr auto; gap: 10px; padding: 9px 0; border-bottom: 1px solid #DDD7CA; }
+  .tl-row:last-child { border-bottom: 0; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #1C5AA3; margin-top: 4px; }
+  .dot.old { background: #B9B3A6; }
+  .tl-row b { display: block; font-size: 12px; }
+  .tl-row span { font: 500 10px 'Overpass Mono'; color: #6F757C; }
+  .tl-row em { font: 700 9px 'Overpass'; font-style: normal; letter-spacing: .12em; color: #1F7A4D; }
+  .fines { margin-top: 18px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { text-align: left; font: 800 9px 'Overpass'; letter-spacing: .14em; color: #6F757C; padding: 8px 20px; border-bottom: 1px solid #D6D0C3; }
+  td { padding: 9px 20px; border-bottom: 1px solid #E3DED2; }
+  tr:last-child td { border-bottom: 0; }
+  td.mono { font-family: 'Overpass Mono', monospace; }
+  .pill { display: inline-block; font: 800 9px 'Overpass'; letter-spacing: .12em; padding: 4px 8px; }
+  .pill.paid { background: #DCEBE2; color: #1F7A4D; }
+  .pill.due { background: #F4DCDA; color: #A3241F; }
+  .foot { padding: 0 32px 12px; display: flex; justify-content: space-between; color: #7C848C; font: 600 10px 'Overpass'; letter-spacing: .12em; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <div class="brand"><span>TRÁNSITO MUNICIPAL</span><strong>Registro Vehicular</strong></div>
+    <div class="meta"><span>MOSTRADOR 3</span><span>OPERADOR · 11:42</span></div>
+  </div>
+
+  <div class="search-wrap">
+    <div class="gantry">
+      <div class="tab">CONSULTA</div>
+      <input value="A123BC" aria-label="Placa, cédula, VIN o boleta">
+      <button class="go">BUSCAR</button>
+    </div>
+    <div class="hints"><span>A123BC</span><span>12.345.678</span><span>VIN-00000000000000001</span><span>BOL-2024-0001</span><span>DETECTADO: PLACA</span></div>
+  </div>
+
+  <div class="route">
+    <div class="stop plate"><div class="bar y"></div><small>PLACA</small><strong>A123BC</strong></div>
+    <div class="stop"><div class="bar b"></div><small>VEHÍCULO</small><strong>Toyota Corolla 2020</strong></div>
+    <div class="stop"><div class="bar g"></div><small>PROPIETARIO ACTIVO</small><strong>Carlos Andrés Pérez</strong></div>
+    <div class="stop"><div class="bar r"></div><small>INFRACCIONES</small><strong>3 boletas · 2 pendientes</strong></div>
+    <div class="status"><strong>ACTIVO</strong><small>REGISTRO VIGENTE</small></div>
+  </div>
+
+  <div class="main">
+    <div style="display:flex; flex-direction:column; min-height:0;">
+      <div class="panel">
+        <div class="sec-head"><div class="tab">VEHÍCULO</div><h2>Identificación y registro</h2><div class="count">UUID 3153CCD3</div></div>
+        <div class="fields">
+          <div class="field"><small>PLACA</small><span class="mono">A123BC</span></div>
+          <div class="field"><small>MARCA / MODELO</small><span>Toyota Corolla</span></div>
+          <div class="field"><small>AÑO</small><span>2020</span></div>
+          <div class="field"><small>VIN / SERIAL</small><span class="mono">VIN-00000000000000001</span></div>
+          <div class="field"><small>SERIAL DE MOTOR</small><span class="mono">MOT-0001</span></div>
+          <div class="field"><small>COLOR</small><span>Blanco</span></div>
+          <div class="field"><small>TIPO</small><span>Sedán</span></div>
+          <div class="field"><small>FECHA DE REGISTRO</small><span>15 ENE 2020</span></div>
+          <div class="field"><small>ESTADO</small><span style="color:#1F7A4D;font-weight:800">Activo</span></div>
+        </div>
+      </div>
+
+      <div class="panel fines">
+        <div class="sec-head"><div class="tab red">MULTAS</div><h2>Boletas asociadas</h2><div class="count">3 REGISTROS</div></div>
+        <table>
+          <thead><tr><th>BOLETA</th><th>FECHA</th><th>LUGAR</th><th>ARTÍCULO</th><th>MONTO</th><th>ESTADO</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">BOL-2024-0001</td><td>10 ENE 2024</td><td>Av. Libertador, Caracas</td><td>Art. 01</td><td class="mono">100,00</td><td><span class="pill paid">PAGADA</span></td></tr>
+            <tr><td class="mono">BOL-2024-0014</td><td>22 FEB 2024</td><td>Av. Sucre, Catia</td><td>Art. 07</td><td class="mono">250,00</td><td><span class="pill due">PENDIENTE</span></td></tr>
+            <tr><td class="mono">BOL-2024-0031</td><td>09 MAR 2024</td><td>Autopista Francisco Fajardo</td><td>Art. 12</td><td class="mono">500,00</td><td><span class="pill due">PENDIENTE</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:18px; min-height:0;">
+      <div class="panel">
+        <div class="owner">
+          <small>PROPIETARIO ACTIVO</small>
+          <h3>Carlos Andrés Pérez</h3>
+          <div class="ced">V-12.345.678 · Natural</div>
+          <dl>
+            <dt>TELÉFONO</dt><dd>0414-1234567</dd>
+            <dt>CORREO</dt><dd>carlos.perez@example.com</dd>
+            <dt>DIRECCIÓN</dt><dd>Av. Libertador, Caracas</dd>
+            <dt>DESDE</dt><dd>15 ENE 2020</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="sec-head"><div class="tab">HISTORIAL</div><h2>Cadena de propiedad</h2></div>
+        <div class="timeline">
+          <div class="tl-row"><div class="dot old"></div><div><b>María Fernanda Gómez</b><span>DOC-0001 · 2018</span></div><em>CERRADO</em></div>
+          <div class="tl-row"><div class="dot"></div><div><b>Carlos Andrés Pérez</b><span>DOC-0008 · 15 ENE 2020</span></div><em>ACTIVO</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>REGISTRO DE DEMOSTRACIÓN · SAMPLE.JSON</span><span>FUENTE: /API/VEHICULOS/PLACA/A123BC</span></div>
+</div>
+</body>
+</html>

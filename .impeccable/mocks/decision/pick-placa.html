@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Troquel de Placa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Overpass+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { width: 1440px; height: 900px; overflow: hidden; background: #E9E7DF; color: #111; font-family: 'Overpass', system-ui, sans-serif; }
+  .top { height: 60px; background: #111; color: #F7F6F1; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+  .top strong { font-size: 19px; font-weight: 900; letter-spacing: .06em; }
+  .top nav { display: flex; gap: 26px; font-size: 11px; letter-spacing: .16em; color: #C9C7BF; }
+  .top nav b { color: #FCD116; }
+  .wrap { padding: 26px 32px 0; }
+  .label { font: 800 10px 'Overpass'; letter-spacing: .2em; color: #6B7075; margin-bottom: 8px; }
+  .searchplate {
+    width: 980px; height: 92px; background: #F7F6F1; border: 2px solid #111; border-radius: 10px;
+    box-shadow: inset 0 0 0 5px #F7F6F1, inset 0 0 0 6px #C9C4B8, 0 7px 0 #BDB9AC;
+    display: flex; align-items: stretch; overflow: hidden; position: relative;
+  }
+  .searchplate .flag { position: absolute; top: 0; left: 0; right: 0; height: 7px; display: flex; }
+  .flag i { flex: 1; } .flag i:nth-child(1) { background: #FCD116; } .flag i:nth-child(2) { background: #0033A0; } .flag i:nth-child(3) { background: #CE1126; }
+  .searchplate input { flex: 1; border: 0; background: transparent; padding: 16px 22px 0; font: 600 24px 'Overpass Mono', monospace; color: #111; outline: 0; }
+  .searchplate input::placeholder { color: #9A9A94; }
+  .searchplate button { width: 190px; border: 0; background: #111; color: #F7F6F1; font: 900 13px 'Overpass'; letter-spacing: .18em; margin: 10px; border-radius: 4px; }
+  .results { margin-top: 24px; display: grid; grid-template-columns: 520px 1fr; gap: 30px; }
+  .platedie { background: #F7F6F1; border: 2px solid #111; border-radius: 12px; padding: 22px 26px 26px; position: relative; box-shadow: 0 8px 0 #BDB9AC; }
+  .platedie .flag { display: flex; height: 6px; width: 92px; margin-bottom: 16px; }
+  .platedie .flag i { flex: 1; } .platedie .flag i:nth-child(1){background:#FCD116} .platedie .flag i:nth-child(2){background:#0033A0} .platedie .flag i:nth-child(3){background:#CE1126}
+  .platedie .plate { font: 900 104px/0.86 'Overpass Mono', monospace; letter-spacing: .01em; }
+  .platedie .sub { display: flex; justify-content: space-between; margin-top: 16px; font-size: 11px; letter-spacing: .14em; color: #6B7075; font-weight: 700; }
+  .platedie .status { position: absolute; right: 24px; top: 24px; border: 2px solid #1F7A4D; color: #1F7A4D; font: 900 11px 'Overpass'; letter-spacing: .16em; padding: 5px 9px; border-radius: 3px; }
+  .model { font-size: 26px; font-weight: 900; margin-top: 18px; }
+  .ownerline { font-size: 14px; color: #4E555C; margin-top: 4px; }
+  .dossier { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .stamp { background: #F7F6F1; border: 1px solid #BDC0C1; border-top: 4px solid #111; padding: 14px 16px; }
+  .stamp h3 { margin: 0 0 12px; font: 900 10px 'Overpass'; letter-spacing: .18em; color: #6B7075; }
+  .row { display: flex; justify-content: space-between; gap: 14px; padding: 6px 0; border-bottom: 1px solid #DFDDD5; font-size: 12px; }
+  .row:last-child { border-bottom: 0; }
+  .row span { color: #6B7075; font-weight: 700; }
+  .row b { font-weight: 700; text-align: right; }
+  .mono { font-family: 'Overpass Mono', monospace; letter-spacing: .01em; }
+  .wide { grid-column: span 2; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { text-align: left; font: 900 9px 'Overpass'; letter-spacing: .14em; color: #6B7075; padding: 7px 0; border-bottom: 2px solid #111; }
+  td { padding: 8px 0; border-bottom: 1px solid #DDDBD3; }
+  .paid { color: #1F7A4D; font-weight: 800; } .due { color: #CE1126; font-weight: 800; }
+  .foot { position: absolute; left: 32px; right: 32px; bottom: 12px; display: flex; justify-content: space-between; font: 700 10px 'Overpass'; letter-spacing: .14em; color: #7C7F80; }
+</style>
+</head>
+<body>
+  <div class="top"><strong>REGISTRO VEHICULAR</strong><nav><b>CONSULTA</b><span>PROPIETARIOS</span><span>VEHÍCULOS</span><span>MULTAS</span></nav></div>
+  <div class="wrap">
+    <div class="label">BUSCAR POR PLACA, CÉDULA, VIN O BOLETA</div>
+    <div class="searchplate">
+      <div class="flag"><i></i><i></i><i></i></div>
+      <input value="A123BC" aria-label="Identificador">
+      <button>CONSULTAR</button>
+    </div>
+
+    <div class="results">
+      <div>
+        <div class="platedie">
+          <div class="flag"><i></i><i></i><i></i></div>
+          <div class="plate">A123BC</div>
+          <div class="sub"><span>PLACA · VEHÍCULO</span><span>REGISTRO 2020</span></div>
+          <div class="status">ACTIVO</div>
+        </div>
+        <div class="model">Toyota Corolla 2020</div>
+        <div class="ownerline">Propietario activo: Carlos Andrés Pérez · V-12.345.678</div>
+      </div>
+
+      <div class="dossier">
+        <div class="stamp">
+          <h3>VEHÍCULO</h3>
+          <div class="row"><span>VIN</span><b class="mono">VIN-00000000000000001</b></div>
+          <div class="row"><span>Serial motor</span><b class="mono">MOT-0001</b></div>
+          <div class="row"><span>Color</span><b>Blanco</b></div>
+          <div class="row"><span>Tipo</span><b>Sedán</b></div>
+          <div class="row"><span>Registro</span><b>15 ENE 2020</b></div>
+        </div>
+        <div class="stamp">
+          <h3>PROPIETARIO</h3>
+          <div class="row"><span>Nombre</span><b>Carlos Andrés Pérez</b></div>
+          <div class="row"><span>Cédula</span><b class="mono">V-12.345.678</b></div>
+          <div class="row"><span>Teléfono</span><b>0414-1234567</b></div>
+          <div class="row"><span>Tipo</span><b>Natural</b></div>
+          <div class="row"><span>Desde</span><b>15 ENE 2020</b></div>
+        </div>
+        <div class="stamp wide">
+          <h3>MULTAS · 3 REGISTROS</h3>
+          <table>
+            <thead><tr><th>BOLETA</th><th>FECHA</th><th>LUGAR</th><th>ART.</th><th>MONTO</th><th>ESTADO</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">BOL-2024-0001</td><td>10 ENE 2024</td><td>Av. Libertador, Caracas</td><td>01</td><td class="mono">100,00</td><td class="paid">PAGADA</td></tr>
+              <tr><td class="mono">BOL-2024-0014</td><td>22 FEB 2024</td><td>Av. Sucre, Catia</td><td>07</td><td class="mono">250,00</td><td class="due">PENDIENTE</td></tr>
+              <tr><td class="mono">BOL-2024-0031</td><td>09 MAR 2024</td><td>Autopista F. Fajardo</td><td>12</td><td class="mono">500,00</td><td class="due">PENDIENTE</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>REGISTRO DE DEMOSTRACIÓN · SAMPLE.JSON</span><span>FUENTE: /API/VEHICULOS/PLACA/A123BC</span></div>
+</body>
+</html>

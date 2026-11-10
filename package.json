@@ -2,20 +2,29 @@
   "name": "bbd",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "proxy": "http://localhost:8555",
   "dependencies": {
+    "@react-pdf/renderer": "^4.9.0",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^13.5.0",
+    "express": "^5.3.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "sqlite3": "^6.0.1",
+    "web-vitals": "^2.1.4",
+    "zod": "^4.6.7"
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev:server": "tsx ./src/backend/index.ts",
+    "dev:all": "tsx ./src/backend/index.ts && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "typecheck": "tsc --noEmit",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -35,5 +44,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.25",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.5"
   }
 }

@@ -1,0 +1,776 @@
+{
+  "propietarios": [
+    {
+      "id": "2bbc1715-371c-470f-8af9-1ce0ddb452aa",
+      "nombre_completo": "Carlos Andrés Pérez",
+      "cedula": 12345678,
+      "direccion": "Av. Libertador, Caracas",
+      "correo": "carlos.perez@example.com",
+      "telefono": "04141234567",
+      "tipo": "Natural"
+    },
+    {
+      "id": "fdbac481-8a0c-49e4-9f71-c1ce8ad77b68",
+      "nombre_completo": "María Fernanda Gómez",
+      "cedula": 23456789,
+      "direccion": "Calle 5, Valencia",
+      "correo": "maria.gomez@example.com",
+      "telefono": "04241234567",
+      "tipo": "Natural"
+    },
+    {
+      "id": "08431e3c-e85d-458d-8a6c-e20a549c85f6",
+      "nombre_completo": "José Antonio Rodríguez",
+      "cedula": 34567890,
+      "direccion": "Av. Bolívar, Maracay",
+      "correo": "jose.rodriguez@example.com",
+      "telefono": "04161234567",
+      "tipo": "Natural"
+    },
+    {
+      "id": "6a22d0e2-4f73-45fd-9eb8-bc6dbbc4973d",
+      "nombre_completo": "Ana Lucía Martínez",
+      "cedula": 45678901,
+      "direccion": "Calle 10, Barquisimeto",
+      "correo": "ana.martinez@example.com",
+      "telefono": "04251234567",
+      "tipo": "Natural"
+    },
+    {
+      "id": "67addda1-972b-421f-a3cd-fbc905feba22",
+      "nombre_completo": "Pedro Luis Hernández",
+      "cedula": 56789012,
+      "direccion": "Av. Universidad, Caracas",
+      "correo": "pedro.hernandez@example.com",
+      "telefono": "04121234567",
+      "tipo": "Natural"
+    },
+    {
+      "id": "982b21bf-6d50-4b15-91e3-d0c69d46e3b7",
+      "nombre_completo": "Luisa Carolina Díaz",
+      "cedula": 67890123,
+      "direccion": "Calle 8, Maracaibo",
+      "correo": "luisa.diaz@example.com",
+      "telefono": "04141234568",
+      "tipo": "Natural"
+    },
+    {
+      "id": "7a7f20ad-815e-4ebf-af75-fc768ff6e2c5",
+      "nombre_completo": "Jorge Enrique Sánchez",
+      "cedula": 78901234,
+      "direccion": "Av. Principal, Valencia",
+      "correo": "jorge.sanchez@example.com",
+      "telefono": "04241234568",
+      "tipo": "Natural"
+    },
+    {
+      "id": "ca4e56ab-3f6a-4060-9adf-7fe45d09d5f4",
+      "nombre_completo": "Gabriela Alejandra Ramírez",
+      "cedula": 89012345,
+      "direccion": "Calle 12, Mérida",
+      "correo": "gabriela.ramirez@example.com",
+      "telefono": "04161234568",
+      "tipo": "Natural"
+    },
+    {
+      "id": "f099e448-3856-41c8-a674-d0edde34d176",
+      "nombre_completo": "Transportes El Rápido, C.A.",
+      "cedula": 90123456,
+      "direccion": "Zona Industrial, Caracas",
+      "correo": "contacto@elrapido.com",
+      "telefono": "02121234567",
+      "tipo": "Jurídico"
+    },
+    {
+      "id": "6f0cbc8f-6c83-45ce-b345-99533d50f373",
+      "nombre_completo": "Inversiones Delta 2000, C.A.",
+      "cedula": 11234567,
+      "direccion": "Av. Francisco de Miranda, Caracas",
+      "correo": "info@deltad2000.com",
+      "telefono": "02121234568",
+      "tipo": "Jurídico"
+    },
+    {
+      "id": "9e57686d-a0d8-419b-aa85-fd3af4e5d51b",
+      "nombre_completo": "Andrés Miguel Torres",
+      "cedula": 22345678,
+      "direccion": "Calle 15, Cumaná",
+      "correo": "andres.torres@example.com",
+      "telefono": "04251234568",
+      "tipo": "Natural"
+    },
+    {
+      "id": "e0d24aac-4fac-469c-9410-5e1328ff483b",
+      "nombre_completo": "Sofía Isabel Morales",
+      "cedula": 33456789,
+      "direccion": "Av. Las Delicias, Maracay",
+      "correo": "sofia.morales@example.com",
+      "telefono": "04121234568",
+      "tipo": "Natural"
+    },
+    {
+      "id": "466004dd-62db-4d5b-ba9a-4bd5b751b5cc",
+      "nombre_completo": "Daniela Paola Castro",
+      "cedula": 44567890,
+      "direccion": "Calle 20, Puerto La Cruz",
+      "correo": "daniela.castro@example.com",
+      "telefono": "04141234569",
+      "tipo": "Natural"
+    },
+    {
+      "id": "4bef651d-1f12-42c4-ac61-c6e6d6bf6e64",
+      "nombre_completo": "Servicios Logísticos Andinos, C.A.",
+      "cedula": 55678901,
+      "direccion": "Av. Industrial, Valencia",
+      "correo": "contacto@logisticosandinos.com",
+      "telefono": "02411234567",
+      "tipo": "Jurídico"
+    },
+    {
+      "id": "c12b5c26-613c-499b-89ae-09810ac3db0e",
+      "nombre_completo": "Ricardo José Blanco",
+      "cedula": 66789012,
+      "direccion": "Calle 3, Barinas",
+      "correo": "ricardo.blanco@example.com",
+      "telefono": "04161234569",
+      "tipo": "Natural"
+    }
+  ],
+  "modelos": [
+    {
+      "tipo": "Sedán",
+      "version": 2020,
+      "modelo": "Corolla",
+      "marca": "Toyota"
+    },
+    {
+      "tipo": "SUV",
+      "version": 2021,
+      "modelo": "Hilux",
+      "marca": "Toyota"
+    },
+    {
+      "tipo": "Sedán",
+      "version": 2019,
+      "modelo": "Civic",
+      "marca": "Honda"
+    },
+    {
+      "tipo": "Camioneta",
+      "version": 2022,
+      "modelo": "Ranger",
+      "marca": "Ford"
+    },
+    {
+      "tipo": "Sedán",
+      "version": 2018,
+      "modelo": "Sentra",
+      "marca": "Nissan"
+    },
+    {
+      "tipo": "Moto",
+      "version": 2023,
+      "modelo": "Bera 150",
+      "marca": "Empire"
+    },
+    {
+      "tipo": "Camión",
+      "version": 2017,
+      "modelo": "NPR",
+      "marca": "Chevrolet"
+    },
+    {
+      "tipo": "SUV",
+      "version": 2021,
+      "modelo": "Tucson",
+      "marca": "Hyundai"
+    },
+    {
+      "tipo": "Sedán",
+      "version": 2020,
+      "modelo": "Elantra",
+      "marca": "Hyundai"
+    },
+    {
+      "tipo": "Camioneta",
+      "version": 2019,
+      "modelo": "Amarok",
+      "marca": "Volkswagen"
+    },
+    {
+      "tipo": "Sedán",
+      "version": 2022,
+      "modelo": "Onix",
+      "marca": "Chevrolet"
+    },
+    {
+      "tipo": "SUV",
+      "version": 2023,
+      "modelo": "Duster",
+      "marca": "Renault"
+    },
+    {
+      "tipo": "Moto",
+      "version": 2022,
+      "modelo": "Pulsar NS200",
+      "marca": "Bajaj"
+    },
+    {
+      "tipo": "Camión",
+      "version": 2016,
+      "modelo": "NQR",
+      "marca": "Isuzu"
+    },
+    {
+      "tipo": "Sedán",
+      "version": 2021,
+      "modelo": "Accent",
+      "marca": "Hyundai"
+    },
+    {
+      "tipo": "Sedán",
+      "version": 2000,
+      "modelo": "Laser",
+      "marca": "Ford"
+    },
+    {
+      "tipo": "SUV",
+      "version": 2007,
+      "modelo": "Trailblazer",
+      "marca": "Chevrolet"
+    }
+  ],
+  "vehiculos": [
+    {
+      "id": "3153ccd3-e691-4e65-b011-8a349e64b0ba",
+      "placa": "A123BC",
+      "serial_motor": "MOT-0001",
+      "vin_serial": "VIN-00000000000000001",
+      "color": "Blanco",
+      "estado_registro": "Activo",
+      "fecha_registro": "2020-01-15",
+      "modelo_id": 1
+    },
+    {
+      "id": "159d5758-0fa2-4608-befe-d38028961512",
+      "placa": "B456CD",
+      "serial_motor": "MOT-0002",
+      "vin_serial": "VIN-00000000000000002",
+      "color": "Negro",
+      "estado_registro": "Activo",
+      "fecha_registro": "2021-03-10",
+      "modelo_id": 2
+    },
+    {
+      "id": "fe4822d7-4285-4c1b-922f-a56d560b57e1",
+      "placa": "C789DE",
+      "serial_motor": "MOT-0003",
+      "vin_serial": "VIN-00000000000000003",
+      "color": "Gris",
+      "estado_registro": "Activo",
+      "fecha_registro": "2019-07-22",
+      "modelo_id": 3
+    },
+    {
+      "id": "69215c4d-d014-4d27-b46d-31f4affe4b11",
+      "placa": "D012EF",
+      "serial_motor": "MOT-0004",
+      "vin_serial": "VIN-00000000000000004",
+      "color": "Rojo",
+      "estado_registro": "Suspendido",
+      "fecha_registro": "2022-02-18",
+      "modelo_id": 4
+    },
+    {
+      "id": "2e096977-26ea-4465-8c95-02f159f2da5a",
+      "placa": "E345FG",
+      "serial_motor": "MOT-0005",
+      "vin_serial": "VIN-00000000000000005",
+      "color": "Azul",
+      "estado_registro": "Activo",
+      "fecha_registro": "2018-11-05",
+      "modelo_id": 5
+    },
+    {
+      "id": "c0793765-4035-45a7-a776-dc0b33382bcd",
+      "placa": "F678GH",
+      "serial_motor": "MOT-0006",
+      "vin_serial": "VIN-00000000000000006",
+      "color": "Negro",
+      "estado_registro": "Activo",
+      "fecha_registro": "2023-05-12",
+      "modelo_id": 6
+    },
+    {
+      "id": "feb931eb-4c07-46b4-9aed-a04547b2ca11",
+      "placa": "G901HI",
+      "serial_motor": "MOT-0007",
+      "vin_serial": "VIN-00000000000000007",
+      "color": "Blanco",
+      "estado_registro": "Inactivo",
+      "fecha_registro": "2017-09-30",
+      "modelo_id": 7
+    },
+    {
+      "id": "3b9554e9-278d-410a-8d22-7dbb50b2744d",
+      "placa": "H234IJ",
+      "serial_motor": "MOT-0008",
+      "vin_serial": "VIN-00000000000000008",
+      "color": "Plateado",
+      "estado_registro": "Activo",
+      "fecha_registro": "2021-08-14",
+      "modelo_id": 8
+    },
+    {
+      "id": "de935735-28a5-4979-96e1-56b71ddec07f",
+      "placa": "I567JK",
+      "serial_motor": "MOT-0009",
+      "vin_serial": "VIN-00000000000000009",
+      "color": "Blanco",
+      "estado_registro": "Activo",
+      "fecha_registro": "2020-04-27",
+      "modelo_id": 9
+    },
+    {
+      "id": "0d85302e-8b87-405f-bcbe-1c35f3381ab2",
+      "placa": "J890KL",
+      "serial_motor": "MOT-0010",
+      "vin_serial": "VIN-00000000000000010",
+      "color": "Verde",
+      "estado_registro": "Activo",
+      "fecha_registro": "2019-12-01",
+      "modelo_id": 10
+    },
+    {
+      "id": "838a02bb-a34a-4e03-ae75-0837e5217229",
+      "placa": "K123LM",
+      "serial_motor": "MOT-0011",
+      "vin_serial": "VIN-00000000000000011",
+      "color": "Gris",
+      "estado_registro": "Activo",
+      "fecha_registro": "2022-06-19",
+      "modelo_id": 11
+    },
+    {
+      "id": "314edb0f-e803-4326-b4b0-f4b839e07aac",
+      "placa": "L456MN",
+      "serial_motor": "MOT-0012",
+      "vin_serial": "VIN-00000000000000012",
+      "color": "Marrón",
+      "estado_registro": "Suspendido",
+      "fecha_registro": "2023-01-23",
+      "modelo_id": 12
+    },
+    {
+      "id": "b3a98d6b-3bc8-4596-8c13-d015572c2d30",
+      "placa": "M789NO",
+      "serial_motor": "MOT-0013",
+      "vin_serial": "VIN-00000000000000013",
+      "color": "Rojo",
+      "estado_registro": "Activo",
+      "fecha_registro": "2022-10-08",
+      "modelo_id": 13
+    },
+    {
+      "id": "c22d0345-71d9-4d4e-b80d-f30b2f3755c5",
+      "placa": "N012OP",
+      "serial_motor": "MOT-0014",
+      "vin_serial": "VIN-00000000000000014",
+      "color": "Azul",
+      "estado_registro": "Inactivo",
+      "fecha_registro": "2016-03-16",
+      "modelo_id": 14
+    },
+    {
+      "id": "754a7dd4-95c0-4f35-8c71-cbc154b660b1",
+      "placa": "O345PQ",
+      "serial_motor": "MOT-0015",
+      "vin_serial": "VIN-00000000000000015",
+      "color": "Blanco",
+      "estado_registro": "Activo",
+      "fecha_registro": "2021-11-29",
+      "modelo_id": 15
+    }
+  ],
+  "catalogo_infracciones": [
+    {
+      "necesita_retencion": 0,
+      "monto": 100,
+      "gravedad": "Leve",
+      "cod_articulo": "Art. 01"
+    },
+    {
+      "necesita_retencion": 0,
+      "monto": 150,
+      "gravedad": "Leve",
+      "cod_articulo": "Art. 02"
+    },
+    {
+      "necesita_retencion": 1,
+      "monto": 500,
+      "gravedad": "Grave",
+      "cod_articulo": "Art. 03"
+    },
+    {
+      "necesita_retencion": 0,
+      "monto": 200,
+      "gravedad": "Leve",
+      "cod_articulo": "Art. 04"
+    },
+    {
+      "necesita_retencion": 1,
+      "monto": 750,
+      "gravedad": "Grave",
+      "cod_articulo": "Art. 05"
+    },
+    {
+      "necesita_retencion": 0,
+      "monto": 250,
+      "gravedad": "Leve",
+      "cod_articulo": "Art. 06"
+    },
+    {
+      "necesita_retencion": 1,
+      "monto": 1000,
+      "gravedad": "Muy Grave",
+      "cod_articulo": "Art. 07"
+    },
+    {
+      "necesita_retencion": 0,
+      "monto": 300,
+      "gravedad": "Leve",
+      "cod_articulo": "Art. 08"
+    },
+    {
+      "necesita_retencion": 1,
+      "monto": 1200,
+      "gravedad": "Muy Grave",
+      "cod_articulo": "Art. 09"
+    },
+    {
+      "necesita_retencion": 0,
+      "monto": 350,
+      "gravedad": "Grave",
+      "cod_articulo": "Art. 10"
+    },
+    {
+      "necesita_retencion": 1,
+      "monto": 1500,
+      "gravedad": "Muy Grave",
+      "cod_articulo": "Art. 11"
+    },
+    {
+      "necesita_retencion": 0,
+      "monto": 400,
+      "gravedad": "Grave",
+      "cod_articulo": "Art. 12"
+    },
+    {
+      "necesita_retencion": 1,
+      "monto": 800,
+      "gravedad": "Grave",
+      "cod_articulo": "Art. 13"
+    },
+    {
+      "necesita_retencion": 0,
+      "monto": 450,
+      "gravedad": "Grave",
+      "cod_articulo": "Art. 14"
+    },
+    {
+      "necesita_retencion": 1,
+      "monto": 2000,
+      "gravedad": "Muy Grave",
+      "cod_articulo": "Art. 15"
+    }
+  ],
+  "multas": [
+    {
+      "id": "ddecaa65-95bb-4767-9e95-48b388610b5f",
+      "monto": 100,
+      "lugar_infraccion": "Av. Libertador, Caracas",
+      "fecha_hora": "2024-01-10T08:30:00",
+      "fecha_pago": "2024-01-15",
+      "n_boleta": "BOL-2024-0001",
+      "vehiculo_id": "3153ccd3-e691-4e65-b011-8a349e64b0ba",
+      "infractor_id": "2bbc1715-371c-470f-8af9-1ce0ddb452aa",
+      "infraccion_id": 1
+    },
+    {
+      "id": "be573dad-71ea-4af3-ada6-12dd1211aa72",
+      "monto": 500,
+      "lugar_infraccion": "Av. Bolívar, Maracay",
+      "fecha_hora": "2024-02-14T10:15:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0002",
+      "vehiculo_id": "159d5758-0fa2-4608-befe-d38028961512",
+      "infractor_id": "fdbac481-8a0c-49e4-9f71-c1ce8ad77b68",
+      "infraccion_id": 3
+    },
+    {
+      "id": "dd115a68-1a1c-41ea-afac-870a37b41d26",
+      "monto": 200,
+      "lugar_infraccion": "Calle 10, Barquisimeto",
+      "fecha_hora": "2024-03-05T16:45:00",
+      "fecha_pago": "2024-03-20",
+      "n_boleta": "BOL-2024-0003",
+      "vehiculo_id": "fe4822d7-4285-4c1b-922f-a56d560b57e1",
+      "infractor_id": "08431e3c-e85d-458d-8a6c-e20a549c85f6",
+      "infraccion_id": 4
+    },
+    {
+      "id": "29f9b47e-dfd4-4080-997c-1790bbe23d3f",
+      "monto": 750,
+      "lugar_infraccion": "Av. Universidad, Caracas",
+      "fecha_hora": "2024-04-11T12:00:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0004",
+      "vehiculo_id": "69215c4d-d014-4d27-b46d-31f4affe4b11",
+      "infractor_id": "6a22d0e2-4f73-45fd-9eb8-bc6dbbc4973d",
+      "infraccion_id": 5
+    },
+    {
+      "id": "20a5e868-1cfd-4d21-9799-5c47c7a67fbc",
+      "monto": 250,
+      "lugar_infraccion": "Calle 8, Maracaibo",
+      "fecha_hora": "2024-05-02T09:20:00",
+      "fecha_pago": "2024-05-10",
+      "n_boleta": "BOL-2024-0005",
+      "vehiculo_id": "2e096977-26ea-4465-8c95-02f159f2da5a",
+      "infractor_id": "67addda1-972b-421f-a3cd-fbc905feba22",
+      "infraccion_id": 6
+    },
+    {
+      "id": "19e03f22-edac-4f1d-87d3-5656a8dff442",
+      "monto": 1000,
+      "lugar_infraccion": "Av. Principal, Valencia",
+      "fecha_hora": "2024-06-18T14:30:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0006",
+      "vehiculo_id": "c0793765-4035-45a7-a776-dc0b33382bcd",
+      "infractor_id": "982b21bf-6d50-4b15-91e3-d0c69d46e3b7",
+      "infraccion_id": 7
+    },
+    {
+      "id": "8d34a9db-d5b2-405a-a954-0cd740f64488",
+      "monto": 300,
+      "lugar_infraccion": "Calle 12, Mérida",
+      "fecha_hora": "2024-07-07T11:10:00",
+      "fecha_pago": "2024-07-18",
+      "n_boleta": "BOL-2024-0007",
+      "vehiculo_id": "feb931eb-4c07-46b4-9aed-a04547b2ca11",
+      "infractor_id": "7a7f20ad-815e-4ebf-af75-fc768ff6e2c5",
+      "infraccion_id": 8
+    },
+    {
+      "id": "89ba1aa2-1449-45a2-960a-09fb90e4b9e1",
+      "monto": 1200,
+      "lugar_infraccion": "Zona Industrial, Caracas",
+      "fecha_hora": "2024-08-21T18:40:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0008",
+      "vehiculo_id": "3b9554e9-278d-410a-8d22-7dbb50b2744d",
+      "infractor_id": "ca4e56ab-3f6a-4060-9adf-7fe45d09d5f4",
+      "infraccion_id": 9
+    },
+    {
+      "id": "67f4711b-852b-41d1-a863-975988fc8f26",
+      "monto": 350,
+      "lugar_infraccion": "Av. Francisco de Miranda, Caracas",
+      "fecha_hora": "2024-09-09T07:50:00",
+      "fecha_pago": "2024-09-15",
+      "n_boleta": "BOL-2024-0009",
+      "vehiculo_id": "de935735-28a5-4979-96e1-56b71ddec07f",
+      "infractor_id": "f099e448-3856-41c8-a674-d0edde34d176",
+      "infraccion_id": 10
+    },
+    {
+      "id": "37f3a8c1-194a-49ae-b20c-a64bb7dd7cd2",
+      "monto": 1500,
+      "lugar_infraccion": "Calle 15, Cumaná",
+      "fecha_hora": "2024-10-03T13:25:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0010",
+      "vehiculo_id": "0d85302e-8b87-405f-bcbe-1c35f3381ab2",
+      "infractor_id": "6f0cbc8f-6c83-45ce-b345-99533d50f373",
+      "infraccion_id": 11
+    },
+    {
+      "id": "3719fd71-5b29-4990-a78a-cd8228080479",
+      "monto": 400,
+      "lugar_infraccion": "Av. Las Delicias, Maracay",
+      "fecha_hora": "2024-10-19T15:05:00",
+      "fecha_pago": "2024-10-30",
+      "n_boleta": "BOL-2024-0011",
+      "vehiculo_id": "838a02bb-a34a-4e03-ae75-0837e5217229",
+      "infractor_id": "9e57686d-a0d8-419b-aa85-fd3af4e5d51b",
+      "infraccion_id": 12
+    },
+    {
+      "id": "c2ad188b-c519-4265-b416-723dab4ca5ed",
+      "monto": 800,
+      "lugar_infraccion": "Calle 20, Puerto La Cruz",
+      "fecha_hora": "2024-11-08T20:15:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0012",
+      "vehiculo_id": "314edb0f-e803-4326-b4b0-f4b839e07aac",
+      "infractor_id": "e0d24aac-4fac-469c-9410-5e1328ff483b",
+      "infraccion_id": 13
+    },
+    {
+      "id": "ad18c489-a9d1-47a7-a062-f529804aaabb",
+      "monto": 450,
+      "lugar_infraccion": "Av. Industrial, Valencia",
+      "fecha_hora": "2024-11-22T06:45:00",
+      "fecha_pago": "2024-12-01",
+      "n_boleta": "BOL-2024-0013",
+      "vehiculo_id": "b3a98d6b-3bc8-4596-8c13-d015572c2d30",
+      "infractor_id": "466004dd-62db-4d5b-ba9a-4bd5b751b5cc",
+      "infraccion_id": 14
+    },
+    {
+      "id": "2cfddd30-0dfb-49ae-b3bb-f5741ed870af",
+      "monto": 2000,
+      "lugar_infraccion": "Calle 3, Barinas",
+      "fecha_hora": "2024-12-05T22:30:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0014",
+      "vehiculo_id": "c22d0345-71d9-4d4e-b80d-f30b2f3755c5",
+      "infractor_id": "4bef651d-1f12-42c4-ac61-c6e6d6bf6e64",
+      "infraccion_id": 15
+    },
+    {
+      "id": "a7d869be-433a-4b57-aa12-3adcc89aa23c",
+      "monto": 150,
+      "lugar_infraccion": "Av. Libertador, Caracas",
+      "fecha_hora": "2024-12-20T17:00:00",
+      "fecha_pago": null,
+      "n_boleta": "BOL-2024-0015",
+      "vehiculo_id": "754a7dd4-95c0-4f35-8c71-cbc154b660b1",
+      "infractor_id": "c12b5c26-613c-499b-89ae-09810ac3db0e",
+      "infraccion_id": 2
+    }
+  ],
+  "historial_propiedad": [
+    {
+      "id": "9a615fd9-973b-4c15-a13f-203c52ee166f",
+      "nro_documento_titulo": "DOC-0001",
+      "fecha_inicio": "2020-01-15",
+      "fecha_fin": null,
+      "propietario_id": "2bbc1715-371c-470f-8af9-1ce0ddb452aa",
+      "vehiculo_id": "3153ccd3-e691-4e65-b011-8a349e64b0ba"
+    },
+    {
+      "id": "4fa1cded-746d-4f5c-9745-6a5ce343b689",
+      "nro_documento_titulo": "DOC-0002",
+      "fecha_inicio": "2021-03-10",
+      "fecha_fin": null,
+      "propietario_id": "fdbac481-8a0c-49e4-9f71-c1ce8ad77b68",
+      "vehiculo_id": "159d5758-0fa2-4608-befe-d38028961512"
+    },
+    {
+      "id": "86372d4e-5948-49d8-ba88-25183d0edfd3",
+      "nro_documento_titulo": "DOC-0003",
+      "fecha_inicio": "2019-07-22",
+      "fecha_fin": null,
+      "propietario_id": "08431e3c-e85d-458d-8a6c-e20a549c85f6",
+      "vehiculo_id": "fe4822d7-4285-4c1b-922f-a56d560b57e1"
+    },
+    {
+      "id": "f54ee1f5-58dc-486f-b59b-71094394b64f",
+      "nro_documento_titulo": "DOC-0004",
+      "fecha_inicio": "2022-02-18",
+      "fecha_fin": null,
+      "propietario_id": "6a22d0e2-4f73-45fd-9eb8-bc6dbbc4973d",
+      "vehiculo_id": "69215c4d-d014-4d27-b46d-31f4affe4b11"
+    },
+    {
+      "id": "c63d112a-44ce-4838-8d9a-ff7b5321bacd",
+      "nro_documento_titulo": "DOC-0005",
+      "fecha_inicio": "2018-11-05",
+      "fecha_fin": null,
+      "propietario_id": "67addda1-972b-421f-a3cd-fbc905feba22",
+      "vehiculo_id": "2e096977-26ea-4465-8c95-02f159f2da5a"
+    },
+    {
+      "id": "4d63be71-3b14-4909-999e-b508f085a8a7",
+      "nro_documento_titulo": "DOC-0006",
+      "fecha_inicio": "2023-05-12",
+      "fecha_fin": null,
+      "propietario_id": "982b21bf-6d50-4b15-91e3-d0c69d46e3b7",
+      "vehiculo_id": "c0793765-4035-45a7-a776-dc0b33382bcd"
+    },
+    {
+      "id": "b44c319a-a4d8-43c0-b676-daaa1bfe5bd6",
+      "nro_documento_titulo": "DOC-0007",
+      "fecha_inicio": "2017-09-30",
+      "fecha_fin": "2021-06-15",
+      "propietario_id": "7a7f20ad-815e-4ebf-af75-fc768ff6e2c5",
+      "vehiculo_id": "feb931eb-4c07-46b4-9aed-a04547b2ca11"
+    },
+    {
+      "id": "60d09f9a-00b4-46f3-ba03-84e141eb0dac",
+      "nro_documento_titulo": "DOC-0008",
+      "fecha_inicio": "2021-08-14",
+      "fecha_fin": null,
+      "propietario_id": "ca4e56ab-3f6a-4060-9adf-7fe45d09d5f4",
+      "vehiculo_id": "3b9554e9-278d-410a-8d22-7dbb50b2744d"
+    },
+    {
+      "id": "bf29574f-4915-4ed2-9fad-05a4bf5ec55f",
+      "nro_documento_titulo": "DOC-0009",
+      "fecha_inicio": "2020-04-27",
+      "fecha_fin": null,
+      "propietario_id": "f099e448-3856-41c8-a674-d0edde34d176",
+      "vehiculo_id": "de935735-28a5-4979-96e1-56b71ddec07f"
+    },
+    {
+      "id": "9af6d917-7786-4df8-ac5e-b45f325fa126",
+      "nro_documento_titulo": "DOC-0010",
+      "fecha_inicio": "2019-12-01",
+      "fecha_fin": "2022-03-10",
+      "propietario_id": "6f0cbc8f-6c83-45ce-b345-99533d50f373",
+      "vehiculo_id": "0d85302e-8b87-405f-bcbe-1c35f3381ab2"
+    },
+    {
+      "id": "ebcf71e4-7e4a-494e-be06-0a358a6d8588",
+      "nro_documento_titulo": "DOC-0011",
+      "fecha_inicio": "2022-06-19",
+      "fecha_fin": null,
+      "propietario_id": "9e57686d-a0d8-419b-aa85-fd3af4e5d51b",
+      "vehiculo_id": "838a02bb-a34a-4e03-ae75-0837e5217229"
+    },
+    {
+      "id": "09b10f8b-5dc3-420c-9e04-e44a054042af",
+      "nro_documento_titulo": "DOC-0012",
+      "fecha_inicio": "2023-01-23",
+      "fecha_fin": null,
+      "propietario_id": "e0d24aac-4fac-469c-9410-5e1328ff483b",
+      "vehiculo_id": "314edb0f-e803-4326-b4b0-f4b839e07aac"
+    },
+    {
+      "id": "74b8646c-ed50-49b8-b44b-2e2f3d06a021",
+      "nro_documento_titulo": "DOC-0013",
+      "fecha_inicio": "2022-10-08",
+      "fecha_fin": null,
+      "propietario_id": "466004dd-62db-4d5b-ba9a-4bd5b751b5cc",
+      "vehiculo_id": "b3a98d6b-3bc8-4596-8c13-d015572c2d30"
+    },
+    {
+      "id": "59bca1e2-7e21-436f-8079-cc37db2b7eec",
+      "nro_documento_titulo": "DOC-0014",
+      "fecha_inicio": "2016-03-16",
+      "fecha_fin": "2020-09-01",
+      "propietario_id": "4bef651d-1f12-42c4-ac61-c6e6d6bf6e64",
+      "vehiculo_id": "c22d0345-71d9-4d4e-b80d-f30b2f3755c5"
+    },
+    {
+      "id": "42bad5e3-28dc-4918-b913-76dd2c036f89",
+      "nro_documento_titulo": "DOC-0015",
+      "fecha_inicio": "2021-11-29",
+      "fecha_fin": null,
+      "propietario_id": "c12b5c26-613c-499b-89ae-09810ac3db0e",
+      "vehiculo_id": "754a7dd4-95c0-4f35-8c71-cbc154b660b1"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T18:59:23Z",
+  "title": "Design System: Registro de Tránsito",
+  "extensions": {
+    "colorMeta": {
+      "highway-yellow": {
+        "role": "primary",
+        "displayName": "Highway Yellow",
+        "canonical": "#F2C200",
+        "tonalRamp": ["#120d01", "#3c2000", "#623a00", "#865900", "#a87a00", "#c89e00", "#e4c466", "#f3ebd5"]
+      },
+      "asphalt-800": {
+        "role": "neutral",
+        "displayName": "Asphalt Field",
+        "canonical": "#20242A",
+        "tonalRamp": ["#0d0d0e", "#24272b", "#3f4349", "#5d6269", "#7d828a", "#9fa4ab", "#c3c7cd", "#eaebed"]
+      },
+      "enamel-100": {
+        "role": "neutral",
+        "displayName": "Enamel Cream",
+        "canonical": "#F5F2E9",
+        "tonalRamp": ["#0e0d0c", "#282722", "#45433d", "#64615a", "#84827a", "#a6a49c", "#c9c7c1", "#ecebe9"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Sign Ink",
+        "canonical": "#20242A",
+        "tonalRamp": ["#0d0d0e", "#24272b", "#3f4349", "#5d6269", "#7d828a", "#9fa4ab", "#c3c7cd", "#eaebed"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#4D535C",
+        "tonalRamp": ["#0c0d0f", "#23272d", "#3e434b", "#5c626b", "#7c828c", "#9ea4ad", "#c2c7cf", "#eaebed"]
+      },
+      "registry-green": {
+        "role": "secondary",
+        "displayName": "Registry Green",
+        "canonical": "#1F7A4D",
+        "tonalRamp": ["#06100a", "#003116", "#00522c", "#187447", "#419567", "#6cb68b", "#9ed6b3", "#e1efe6"]
+      },
+      "warning-red": {
+        "role": "secondary",
+        "displayName": "Warning Red",
+        "canonical": "#C1272D",
+        "tonalRamp": ["#1a0706", "#570000", "#870008", "#b41823", "#db4544", "#fc726c", "#ffa49b", "#ffe3e0"]
+      },
+      "route-blue": {
+        "role": "tertiary",
+        "displayName": "Route Blue",
+        "canonical": "#1C5AA3",
+        "tonalRamp": ["#070e17", "#002553", "#084281", "#2561aa", "#4783cf", "#6fa6ed", "#9ecaff", "#e1ecfc"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Start-state headline; the largest first-viewport statement." },
+      "record-title": { "displayName": "Record Title", "purpose": "Resolved vehicle or boleta heading inside the dossier." },
+      "headline": { "displayName": "Section Headline", "purpose": "Titles for dossier sections and rail groups." },
+      "body": { "displayName": "Body", "purpose": "Explanatory and narrative copy; measures stay under 67ch." },
+      "data": { "displayName": "Registry Data", "purpose": "Plate, cédula, VIN, boleta, money, date, and table values." },
+      "label": { "displayName": "Plate Label", "purpose": "Uppercase mono labels, status labels, table headers, and route labels." }
+    },
+    "shadows": [
+      { "name": "gantry-lift", "value": "0 22px 54px rgba(0, 0, 0, 0.34)", "purpose": "The floating search gantry above the record." },
+      { "name": "dossier-lift", "value": "0 32px 80px rgba(0, 0, 0, 0.34)", "purpose": "The dossier, state panel, and loading panel." },
+      { "name": "status-dot", "value": "0 1px 3px rgba(0, 0, 0, 0.35)", "purpose": "Small counter status dot; offset neutral blur, never a colored halo." }
+    ],
+    "motion": [
+      { "name": "sign-ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Route draw, stop lighting, and record entrance." },
+      { "name": "route-draw", "value": "520ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The dashed route line draws once from left to right." },
+      { "name": "stop-light", "value": "380ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Route stops rise and light in sequence; delay = 140ms + stop × 95ms." },
+      { "name": "record-in", "value": "360ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The resolved dossier enters with a short rise." },
+      { "name": "skeleton-pulse", "value": "1.5s ease-in-out infinite", "purpose": "Loading skeleton opacity pulse; disabled under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "rail-narrow", "value": "1120px" },
+      { "name": "rail-stack", "value": "960px" },
+      { "name": "route-stack", "value": "860px" },
+      { "name": "gantry-stack", "value": "760px" },
+      { "name": "phone", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Search Gantry",
+      "kind": "input",
+      "refersTo": "search-gantry",
+      "description": "The single smart lookup bar: yellow CONSULTA tab, mono input, dark BUSCAR key.",
+      "html": "<form class=\"ds-gantry\"><span class=\"ds-gantry__tab\">Consulta</span><input class=\"ds-gantry__input\" value=\"A123BC\" aria-label=\"Placa, cédula, VIN o número de boleta\" /><button class=\"ds-gantry__submit\" type=\"button\">Buscar</button></form>",
+      "css": ".ds-gantry { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; align-items: stretch; overflow: hidden; border: 2px solid var(--cream-100); border-radius: 4px; background: var(--cream-100); color: var(--ink); box-shadow: 0 22px 54px rgba(0, 0, 0, 0.34); } .ds-gantry__tab { display: grid; place-items: center; border-right: 1px solid rgba(32, 36, 42, 0.24); background: var(--yellow); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; } .ds-gantry__input { width: 100%; min-width: 0; min-height: 66px; padding: 0 20px; border: 0; background: transparent; color: var(--ink); caret-color: var(--blue); font-family: var(--font-mono); font-size: 1.3rem; font-weight: 500; letter-spacing: 0.015em; text-transform: uppercase; } .ds-gantry__input:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; } .ds-gantry__submit { min-width: 158px; margin: 7px; border: 0; border-radius: 2px; background: var(--asphalt-800); color: var(--cream-100); font-family: var(--font-sans); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms ease; } .ds-gantry__submit:hover { background: var(--asphalt-700); } .ds-gantry__submit:active { transform: translateY(1px); } @media (max-width: 760px) { .ds-gantry { grid-template-columns: 1fr; } .ds-gantry__tab { min-height: 31px; border-right: 0; border-bottom: 1px solid rgba(32, 36, 42, 0.2); } .ds-gantry__input { min-height: 58px; padding: 0 16px; } .ds-gantry__submit { min-height: 50px; margin: 0; border-top: 2px solid var(--ink); border-radius: 0; } }"
+    },
+    {
+      "name": "Route Strip",
+      "kind": "custom",
+      "refersTo": "route-status-active",
+      "description": "The signature component: origin plate, three linked stops, and a state plate on one enamel strip.",
+      "html": "<nav class=\"ds-route\" aria-label=\"Ruta del expediente\"><div class=\"ds-route__origin\"><span class=\"ds-route__origin-label\">Placa</span><strong class=\"ds-route__origin-value\">A123BC</strong><span class=\"ds-route__origin-meta\">Coincidencia por placa</span></div><ol class=\"ds-route__track\"><li class=\"ds-route__stop\"><span class=\"ds-route__dot\"></span><span class=\"ds-route__label\">Vehículo</span><strong class=\"ds-route__value\">Toyota Corolla</strong><span class=\"ds-route__meta\">2020 · A123BC</span></li><li class=\"ds-route__stop\"><span class=\"ds-route__dot\"></span><span class=\"ds-route__label\">Titular</span><strong class=\"ds-route__value\">Carlos Andrés Pérez</strong><span class=\"ds-route__meta\">V-12.345.678</span></li><li class=\"ds-route__stop\"><span class=\"ds-route__dot\"></span><span class=\"ds-route__label\">Multas</span><strong class=\"ds-route__value\">1 multa</strong><span class=\"ds-route__meta\">0 pendientes</span></li></ol><div class=\"ds-route__status\"><span class=\"ds-route__status-label\">Estado</span><strong class=\"ds-route__status-value\">Activo</strong><span class=\"ds-route__status-meta\">Con vigencia</span></div></nav>",
+      "css": ".ds-route { display: grid; grid-template-columns: minmax(188px, 0.92fr) minmax(0, 2.35fr) minmax(164px, 0.82fr); border-bottom: 2px solid var(--ink); background: var(--cream-100); color: var(--ink); } .ds-route__origin { display: flex; flex-direction: column; justify-content: center; padding: 18px 22px 16px; border-right: 2px solid var(--ink); background: var(--yellow); } .ds-route__origin-label, .ds-route__status-label { font-family: var(--font-mono); font-size: 0.61rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.92; } .ds-route__origin-value { margin-top: 2px; font-family: var(--font-mono); font-size: clamp(1.45rem, 2.6vw, 2.15rem); font-weight: 700; letter-spacing: 0.015em; line-height: 1.05; overflow-wrap: anywhere; } .ds-route__origin-meta { margin-top: 7px; font-size: 0.72rem; font-weight: 600; opacity: 0.8; } .ds-route__track { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0 4px; list-style: none; } .ds-route__track::before { content: ''; position: absolute; top: 37px; left: 11%; right: 11%; height: 2px; background-image: linear-gradient(90deg, rgba(32, 36, 42, 0.52) 0 7px, transparent 7px 14px); background-size: 14px 2px; } .ds-route__stop { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; padding: 19px 9px 15px; text-align: center; } .ds-route__dot { width: 36px; height: 36px; margin-bottom: 9px; border: 2px solid var(--ink); border-radius: 50%; background: var(--cream-100); } .ds-route__label { font-family: var(--font-mono); font-size: 0.57rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-soft); } .ds-route__value { max-width: 100%; margin-top: 4px; overflow: hidden; font-size: 0.82rem; font-weight: 800; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; } .ds-route__meta { max-width: 100%; margin-top: 3px; overflow: hidden; color: var(--ink-soft); font-size: 0.68rem; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; } .ds-route__status { display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: center; min-height: 78px; margin: 12px; padding: 12px 10px; border: 2px solid var(--ink); border-radius: 2px; background: var(--green); color: #fffdf7; text-align: center; } .ds-route__status-value { font-family: var(--font-mono); font-size: 0.88rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.1; text-transform: uppercase; } .ds-route__status-meta { font-size: 0.66rem; line-height: 1.25; opacity: 0.95; } @media (max-width: 860px) { .ds-route { grid-template-columns: 1fr; } .ds-route__origin { border-right: 0; border-bottom: 2px solid var(--ink); } .ds-route__status { margin: 0 12px 12px; } }"
+    },
+    {
+      "name": "Active Status Plate",
+      "kind": "chip",
+      "refersTo": "route-status-active",
+      "description": "A compact green enamel sign for an active vehicle or ownership state.",
+      "html": "<span class=\"ds-status\"><span class=\"ds-status__label\">Estado</span><strong class=\"ds-status__value\">Activo</strong><span class=\"ds-status__meta\">Con vigencia</span></span>",
+      "css": ".ds-status { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; min-height: 78px; padding: 12px 18px; border: 2px solid var(--ink); border-radius: 2px; background: var(--green); color: #fffdf7; text-align: center; } .ds-status__label { font-family: var(--font-mono); font-size: 0.61rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.92; } .ds-status__value { font-family: var(--font-mono); font-size: 0.88rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.1; text-transform: uppercase; } .ds-status__meta { font-size: 0.66rem; line-height: 1.25; opacity: 0.95; }"
+    },
+    {
+      "name": "Dossier Panel",
+      "kind": "card",
+      "refersTo": "search-gantry",
+      "description": "The cream record surface that holds the header, facts, timeline, and tables.",
+      "html": "<section class=\"ds-dossier\"><header class=\"ds-dossier__head\"><h2 class=\"ds-dossier__title\">Toyota Corolla</h2><p class=\"ds-dossier__sub\">2020 · Sedán · Placa A123BC</p></header><p class=\"ds-dossier__copy\">El expediente reúne el vehículo, la cadena de propiedad y las multas en una sola lectura.</p></section>",
+      "css": ".ds-dossier { overflow: hidden; border-radius: 4px; background: var(--cream-100); color: var(--ink); box-shadow: 0 32px 80px rgba(0, 0, 0, 0.34); } .ds-dossier__head { padding: 30px 32px 24px; border-bottom: 1px solid rgba(32, 36, 42, 0.17); } .ds-dossier__title { margin: 0; font-size: clamp(2rem, 4.4vw, 3.25rem); font-weight: 800; letter-spacing: -0.038em; line-height: 1.01; text-wrap: balance; } .ds-dossier__sub { margin: 10px 0 0; color: var(--ink-soft); font-size: 0.98rem; line-height: 1.45; } .ds-dossier__copy { max-width: 67ch; margin: 0; padding: 24px 32px 30px; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.58; }"
+    },
+    {
+      "name": "Fact Grid",
+      "kind": "custom",
+      "refersTo": "button",
+      "description": "Three-column definition grid with mono labels and hairline row rules.",
+      "html": "<dl class=\"ds-facts\"><div class=\"ds-fact\"><dt>Placa</dt><dd class=\"ds-fact__data\">A123BC</dd></div><div class=\"ds-fact\"><dt>Marca</dt><dd>Toyota</dd></div><div class=\"ds-fact\"><dt>Modelo</dt><dd>Corolla</dd></div><div class=\"ds-fact\"><dt>Año</dt><dd class=\"ds-fact__data\">2020</dd></div><div class=\"ds-fact\"><dt>Color</dt><dd>Blanco</dd></div><div class=\"ds-fact\"><dt>Estado</dt><dd>Activo</dd></div></dl>",
+      "css": ".ds-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-top: 1px solid rgba(32, 36, 42, 0.2); } .ds-fact { min-width: 0; padding: 13px 18px 15px 0; border-bottom: 1px solid rgba(32, 36, 42, 0.12); } .ds-fact dt { color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.61rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; } .ds-fact dd { margin: 6px 0 0; font-size: 0.93rem; line-height: 1.42; overflow-wrap: anywhere; } .ds-fact__data { font-family: var(--font-mono); font-size: 0.88rem; letter-spacing: 0.01em; } @media (max-width: 760px) { .ds-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } } @media (max-width: 560px) { .ds-facts { grid-template-columns: minmax(0, 1fr); } }"
+    },
+    {
+      "name": "Fines Table",
+      "kind": "custom",
+      "refersTo": "tag-active",
+      "description": "Ink-ruled table with mono numeric columns and an overflow wrapper for phones.",
+      "html": "<div class=\"ds-table-wrap\"><table class=\"ds-table\"><thead><tr><th>Boleta</th><th>Infracción</th><th class=\"ds-table__num\">Monto</th><th>Estado</th></tr></thead><tbody><tr><td><span class=\"ds-table__strong\">BOL-2024-0001</span><span class=\"ds-table__meta\">14 feb 2024</span></td><td>Art. 03 · Grave</td><td class=\"ds-table__num\">Bs. 500,00</td><td><span class=\"ds-tag\">Pagada</span></td></tr></tbody></table></div>",
+      "css": ".ds-table-wrap { overflow-x: auto; padding-bottom: 2px; } .ds-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 0.88rem; } .ds-table th { padding: 0 14px 9px 0; border-bottom: 2px solid var(--ink); color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.59rem; font-weight: 700; letter-spacing: 0.09em; text-align: left; text-transform: uppercase; white-space: nowrap; } .ds-table td { padding: 12px 14px 12px 0; border-bottom: 1px solid rgba(32, 36, 42, 0.13); vertical-align: top; } .ds-table tbody tr:hover { background: rgba(32, 36, 42, 0.038); } .ds-table__num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; } .ds-table__strong { display: block; font-weight: 700; line-height: 1.35; } .ds-table__meta { display: block; margin-top: 2px; color: var(--ink-soft); font-size: 0.75rem; line-height: 1.3; } .ds-tag { display: inline-flex; border: 1px solid rgba(31, 122, 77, 0.34); border-radius: 2px; background: var(--green-soft); padding: 3px 7px; color: #155c39; font-family: var(--font-mono); font-size: 0.61rem; font-weight: 700; letter-spacing: 0.07em; line-height: 1.2; text-transform: uppercase; }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Transparent secondary action with an ink border; inverts on hover.",
+      "html": "<button class=\"ds-btn\" type=\"button\">Limpiar consulta</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 15px; border: 1px solid var(--ink); border-radius: 2px; background: transparent; color: var(--ink); font-family: var(--font-sans); font-size: 0.79rem; font-weight: 700; letter-spacing: 0.015em; transition: background 150ms ease, color 150ms ease; } .ds-btn:hover { background: var(--ink); color: var(--cream-100); } .ds-btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }"
+    },
+    {
+      "name": "Fine Filter",
+      "kind": "chip",
+      "refersTo": "tag-active",
+      "description": "A two-state segmented filter with ink fill for the active segment.",
+      "html": "<div class=\"ds-segmented\" role=\"group\" aria-label=\"Filtrar multas\"><button aria-pressed=\"true\">Todas <span>1</span></button><button aria-pressed=\"false\">Pendientes <span>0</span></button></div>",
+      "css": ".ds-segmented { display: inline-flex; overflow: hidden; border: 1px solid rgba(32, 36, 42, 0.34); border-radius: 2px; } .ds-segmented button { display: inline-flex; align-items: center; gap: 6px; border: 0; background: transparent; padding: 7px 10px; color: var(--ink-soft); font-family: var(--font-sans); font-size: 0.74rem; font-weight: 700; } .ds-segmented button + button { border-left: 1px solid rgba(32, 36, 42, 0.2); } .ds-segmented button[aria-pressed='true'] { background: var(--ink); color: var(--cream-100); } .ds-segmented button:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; } .ds-segmented button span { font-family: var(--font-mono); font-size: 0.66rem; opacity: 0.78; }"
+    },
+    {
+      "name": "Recent Lookup",
+      "kind": "card",
+      "refersTo": "recent-item",
+      "description": "A dark-shell history row that names the match kind, query, and resolved label.",
+      "html": "<button class=\"ds-recent\" type=\"button\"><span class=\"ds-recent__kind\">Placa</span><span class=\"ds-recent__query\">A123BC</span><span class=\"ds-recent__label\">A123BC · Toyota Corolla</span><span class=\"ds-recent__arrow\" aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-recent { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 4px 10px; width: 100%; border: 1px solid rgba(245, 242, 233, 0.17); border-radius: 2px; background: transparent; padding: 10px 12px; color: var(--cream-100); text-align: left; transition: border-color 160ms ease, background 160ms ease; } .ds-recent:hover { border-color: rgba(242, 194, 0, 0.52); background: rgba(245, 242, 233, 0.04); } .ds-recent:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; } .ds-recent__kind { justify-self: start; border: 1px solid rgba(242, 194, 0, 0.4); border-radius: 2px; padding: 2px 5px; color: var(--yellow); font-family: var(--font-mono); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; } .ds-recent__query { min-width: 0; overflow: hidden; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; } .ds-recent__label { grid-column: 2; min-width: 0; overflow: hidden; color: rgba(245, 242, 233, 0.56); font-size: 0.72rem; text-overflow: ellipsis; white-space: nowrap; } .ds-recent__arrow { grid-column: 3; grid-row: 1 / span 2; color: rgba(245, 242, 233, 0.48); }"
+    },
+    {
+      "name": "Warning Notice",
+      "kind": "card",
+      "refersTo": "tag-active",
+      "description": "An amber notice for a missing current owner or an ownership mismatch.",
+      "html": "<div class=\"ds-notice\"><strong>Sin titular vigente</strong><p>El historial de propiedad está cerrado. Se muestra el último titular registrado.</p></div>",
+      "css": ".ds-notice { border: 1px solid rgba(138, 89, 0, 0.28); border-radius: 2px; background: #f6e8c9; padding: 15px 17px; color: #5b3b00; } .ds-notice strong { display: block; font-family: var(--font-sans); font-size: 0.9rem; line-height: 1.35; } .ds-notice p { margin: 5px 0 0; font-size: 0.84rem; line-height: 1.5; opacity: 0.85; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ruta del Expediente",
+    "overview": "The interface treats a lookup as a route rather than a form result. A single identifier resolves into a sequence of stops — vehicle, owner or infractor, fines — and each stop is a signpost back into the same dossier. The road-sign world is carried by enamel plates, highway yellow, state plates, and a dashed route line, not by decorative roadside imagery.\n\nThe system is built for a service counter: dense enough for staff to scan, quiet enough to read for several minutes, and explicit about state. Cream panels sit on a flat asphalt field; ink rules divide facts; yellow marks the query and the resolved identifier; green, red, and neutral plates carry the answer. Overpass gives the display and body voice a blunt, legible character, while Overpass Mono handles plates, identifiers, dates, and amounts.",
+    "keyCharacteristics": [
+      "Flat asphalt ground with enamel-cream reading surfaces.",
+      "Rectangular sign plates, 2px ink borders, and hairline tonal rules.",
+      "A continuous route strip as the signature first-viewport shape.",
+      "State carried by compact green, red, and neutral plates.",
+      "Authored SVG icons, no photographic or illustrative rasters."
+    ],
+    "rules": [
+      { "name": "The Signal Rarity Rule", "body": "Yellow is a signal, not a surface wash: use it for the query tab, the resolved identifier, and current-state markers, never as a generic section background.", "section": "colors" },
+      { "name": "The Two-Plate Rule", "body": "A state is either a vehicle record state or a fine state. Do not blend green and red into a single decorative accent.", "section": "colors" },
+      { "name": "The Data Is Mono Rule", "body": "Any value a clerk might copy — placa, cédula, VIN, boleta, monto, fecha — is set in Overpass Mono. Narrative copy stays in Overpass.", "section": "typography" },
+      { "name": "The Tracking Floor Rule", "body": "Display tracking never goes below -0.04em. The built system uses -0.038em for its largest headings.", "section": "typography" },
+      { "name": "The Soft-Lift Rule", "body": "Only floating search and record surfaces get a shadow. Interior sections stay flat and are separated by tone and rules.", "section": "elevation" },
+      { "name": "The No-Halo Rule", "body": "A colored glow with zero offset is decoration. Status dots get an offset, blurred neutral shadow instead.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the asphalt field flat at #20242A and let enamel panels provide the reading surface.",
+      "Do use 2px ink borders on sign plates and 1px tonal rules inside the dossier.",
+      "Do set identifiers, money, dates, and plate values in Overpass Mono.",
+      "Do keep the route strip as the dominant first-viewport shape and preserve its sequential lighting.",
+      "Do allow data tables to scroll horizontally inside their wrapper rather than forcing page-level overflow.",
+      "Do respect prefers-reduced-motion by collapsing route, stop, record, and skeleton animation."
+    ],
+    "donts": [
+      "Don't add an eyebrow or kicker above a heading.",
+      "Don't use hard offset shadows, colored zero-offset halos, or faux bevels; this is a flat enamel system.",
+      "Don't use gradient text, glyph-icon fonts, or system display faces.",
+      "Don't use colored left or right side stripes to carry state; use status plates and tags.",
+      "Don't warm the asphalt toward blue-black slate or lighten the enamel into white.",
+      "Don't replace the route strip with a generic search-results table."
+    ]
+  }
+}

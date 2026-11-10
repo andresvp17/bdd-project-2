@@ -1,0 +1,155 @@
+{
+  "title": "Elija el mundo visual",
+  "question": "La dirección asignada es Ruta del Expediente (señalética vial). Consérvela, elija una alternativa o vuelva a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Ruta del Expediente",
+      "kicker": "THE ROLL",
+      "lineage": "señalética vial y wayfinding venezolano",
+      "thesis": "Cada consulta se resuelve como una ruta: identificador, vehículo, propietario e infracciones, con señales de estado en el camino.",
+      "palette": ["#20242A", "#F5F2E9", "#F2C200", "#C1272D", "#1C5AA3", "#1F7A4D"],
+      "materials": ["esmalte de señal", "asfalto", "tipografía de autopista"],
+      "viewport": "Una barra de consulta tipo pórtico, una tira de ruta resuelta y el expediente en paneles de señal.",
+      "risk": "La señalética literal puede volverse disfraz de carretera; el shell debe seguir siendo una herramienta de mostrador.",
+      "raised": [
+        {
+          "from": "variable-font-specimen",
+          "raise": "Contraste de escala como única jerarquía: la placa o boleta resuelta manda a tamaño de señal."
+        },
+        {
+          "from": "aww2-zoo-gardens-guide-map",
+          "raise": "Una sola forma dominante ocupa el primer viewport: la tira de ruta continua."
+        },
+        {
+          "from": "pop-culture-shelf-character-goods-catalog",
+          "raise": "Estados de foco de celda completa en filas e historial."
+        },
+        {
+          "from": "notation-diagram-systems-labanotation",
+          "raise": "El historial de propiedad se lee como una línea de tiempo vertical, no como una tabla."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "pick-placa",
+      "kind": "pick",
+      "label": "Troquel de Placa",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "troqueles de placas vehiculares venezolanas",
+      "thesis": "La placa es el objeto: un identificador troquelado en relieve organiza la búsqueda y el expediente.",
+      "palette": ["#F7F6F1", "#111111", "#FCD116", "#0033A0", "#CE1126", "#6B7075"],
+      "materials": ["chapa esmaltada", "relieve", "tipografía condensada de placa"],
+      "viewport": "Un campo con forma de placa, la placa resuelta a gran escala y el expediente en campos estampados.",
+      "risk": "Es la dirección más literal y la que más ejecuciones de esta categoría eligen; el riesgo es leerse como catálogo de placas.",
+      "html": ".impeccable/mocks/decision/pick-placa.html"
+    },
+    {
+      "id": "challenger-high-density",
+      "kind": "challenger",
+      "catalogId": "japanese-high-density-web",
+      "label": "Mostrador de Alta Densidad",
+      "verdict": "competitive",
+      "lineage": "mosaicos web japoneses de alta densidad",
+      "thesis": "El mostrador como mosaico de módulos: cada dato del expediente en su caja reglada, sin desperdiciar un píxel.",
+      "palette": ["#FFFFFF", "#141414", "#D7263D", "#E7E9EC", "#8A9199"],
+      "materials": ["mosaico de módulos", "filetes de un píxel", "tipografía gótica compacta"],
+      "viewport": "Rail de navegación, mosaico de módulos de consulta y expediente, pestañas rojas de utilidad.",
+      "case": "Encaja con la claridad de producto y la densidad del mostrador; pierde en identificación con la cultura administrativa venezolana.",
+      "risk": "Puede leerse como portal genérico de noticias si el mosaico no obedece al expediente.",
+      "kept": "Mosaico denso de módulos con filetes de un píxel.",
+      "html": ".impeccable/mocks/decision/challenger-high-density.html"
+    },
+    {
+      "id": "challenger-centre-rail",
+      "kind": "challenger",
+      "catalogId": "rw-centre-rail-reference-setting",
+      "label": "Edición de Referencia",
+      "verdict": "competitive",
+      "lineage": "páginas de referencia con riel central",
+      "thesis": "El expediente como edición oficial: dos columnas de registro en torno a un riel central de claves y un margen de aparato.",
+      "palette": ["#F3EAD8", "#1F1B16", "#B23A2E", "#6C8AA6"],
+      "materials": ["papel hueso", "tinta de hierro", "filete bermellón", "motor de reglas"],
+      "viewport": "Dos columnas de texto pequeñas, un riel central de claves y un margen ancho con el aparato de consulta.",
+      "case": "Aporta autoridad documental y un riel de claves clarísimo; pierde porque la pantalla empieza a leerse como libro antes que como herramienta.",
+      "risk": "El aparato editorial puede volverse ornamento y robar densidad operativa.",
+      "kept": "Riel central de claves y margen de anotación que absorbe el ancho.",
+      "html": ".impeccable/mocks/decision/challenger-centre-rail.html"
+    },
+    {
+      "id": "challenger-variable-font",
+      "kind": "challenger",
+      "catalogId": "variable-font-specimen",
+      "label": "Espécimen Variable",
+      "verdict": "declined",
+      "lineage": "especímenes tipográficos interactivos",
+      "thesis": "El identificador como espécimen vivo, con ejes que modulan la lectura del registro.",
+      "palette": ["#FAFAF7", "#111111", "#E8452C"],
+      "materials": ["papel blanco", "tinta", "interpolación tipográfica"],
+      "viewport": "Una letra gigante y un control de eje que remapea toda la retícula.",
+      "risk": "No hay razón de producto para un eje variable; el visitante administra, no especula.",
+      "kept": "Contraste de escala como única jerarquía."
+    },
+    {
+      "id": "challenger-zoo-map",
+      "kind": "challenger",
+      "catalogId": "aww2-zoo-gardens-guide-map",
+      "label": "Mapa de Jardines",
+      "verdict": "declined",
+      "lineage": "mapas de guía ilustrados",
+      "thesis": "El registro como mapa de áreas planas, cada dominio una forma de color.",
+      "palette": ["#8ED462", "#F5F1E4", "#2C2E2A", "#FF705D", "#F5E211"],
+      "materials": ["color plano", "lóbulos", "plegado"],
+      "viewport": "Un lóbulo de color dominante con la costa haciendo de división.",
+      "risk": "Un mapa no resuelve una consulta; la metáfora se come la tarea.",
+      "kept": "Una forma plana dominante que ocupa el viewport."
+    },
+    {
+      "id": "challenger-character-catalog",
+      "kind": "challenger",
+      "catalogId": "pop-culture-shelf-character-goods-catalog",
+      "label": "Catálogo de Caracteres",
+      "verdict": "declined",
+      "lineage": "catálogos de personajes y mascotas",
+      "thesis": "Los expedientes como elenco de fichas redondeadas ordenadas por popularidad.",
+      "palette": ["#FDE7F0", "#FFFFFF", "#7A4A8A", "#F2B5D4"],
+      "materials": ["pastel plano", "keyline blanca", "tipografía redondeada"],
+      "viewport": "Una retícula de mascotas con placa de nombre y nota de personalidad.",
+      "risk": "El tono lúdico desmiente la autoridad de un registro de tránsito.",
+      "kept": "Estados de foco de celda completa."
+    },
+    {
+      "id": "challenger-labanotation",
+      "kind": "challenger",
+      "catalogId": "notation-diagram-systems-labanotation",
+      "label": "Partitura Laban",
+      "verdict": "declined",
+      "lineage": "sistemas de notación de movimiento",
+      "thesis": "El historial de propiedad como partitura vertical: duración, nivel y simetría.",
+      "palette": ["#FFFFFF", "#111111", "#E7E9EC"],
+      "materials": ["bloques de símbolo", "trama", "papel de partitura"],
+      "viewport": "Un pentagrama central vertical con columnas bilaterales.",
+      "risk": "La notación de danza no es un modelo legible para un expediente vehicular.",
+      "kept": "El tiempo codificado en un solo eje vertical."
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code"
+  },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "El estándar de la categoría",
+    "thesis": "Lo que esta categoría entrega, ejecutado con oficio: shell neutro, búsqueda clara, ficha limpia.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB"],
+    "materials": ["grilla limpia", "tabla ordenada"],
+    "viewport": "La disposición que el visitante espera, a máxima calidad.",
+    "risk": "Indistinguible de la competencia por diseño."
+  },
+  "steer": true
+}

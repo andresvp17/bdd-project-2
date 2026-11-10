@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Registro de Tránsito
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Consulta de expedientes para un registro municipal de vehículos, propietarios y multas de tránsito. La interfaz permite resolver una placa, cédula, VIN o número de boleta en una sola ficha de lectura.
 
-## Available Scripts
+## Requisitos
 
-In the project directory, you can run:
+- Node.js y npm
+- El proyecto usa Create React App para el frontend y Express + SQLite para la API.
 
-### `npm start`
+## Ejecutar en desarrollo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instale las dependencias y levante la API y la interfaz en dos terminales:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+npm run dev:server
+```
 
-### `npm test`
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La interfaz queda en `http://localhost:3000` y la API en `http://localhost:8555`. CRA redirige las solicitudes `/api/*` al puerto de la API mediante el proxy configurado en `package.json`.
 
-### `npm run build`
+## Consultas de demostración
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Placa: `A123BC`
+- Cédula: `V-12.345.678`
+- VIN: `VIN-00000000000000001`
+- Boleta: `BOL-2024-0002`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Los datos de `sample.json` son ficticios y se usan únicamente como demostración. No corresponden a personas, vehículos ni multas reales.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Verificación
 
-### `npm run eject`
+```bash
+npm run typecheck
+npm run build
+npm test
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Estructura
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `src/backend/`: API Express, servicios, repositorios y esquemas Zod.
+- `src/frontend/`: interfaz de consulta, cliente de la API y formato de datos.
+- `src/lib/`: tipos compartidos y utilidades de base de datos.
+- `database.db`: base SQLite local sembrada al arrancar la API.
+- `sample.json`: datos de ejemplo usados por el sembrado.
